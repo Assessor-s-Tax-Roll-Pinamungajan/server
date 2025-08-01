@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  user_id  Int    @id @default(autoincrement())
+  username String
+  password String
+}
+
+model Anislag {
+  id                Int     @id @default(autoincrement())
+  assessor_no       Int
+  cadastral_no      String
+  arp_A             String?
+  arp_B             String?
+  arp_C             String?
+  arp_D             String?
+  arp_E             String?
+  arp_F             String?
+  name_owner        String
+  title_no          String?
+  area              String?
+  classification_no String?
+  improvement_1     String?
+  improvement_2     String?
+  mch               String?
+  oth               String?
+  index_no          String
+  barangay          String
+  cancel_reason     String?
+  cancel_details    Json?
+  remarks           String?
+}

@@ -1,0 +1,38 @@
+/*
+  Warnings:
+
+  - You are about to drop the column `cancel` on the `Anislag` table. All the data in the column will be lost.
+
+*/
+-- RedefineTables
+PRAGMA defer_foreign_keys=ON;
+PRAGMA foreign_keys=OFF;
+CREATE TABLE "new_Anislag" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "assessor_no" INTEGER NOT NULL,
+    "cadastral_no" TEXT NOT NULL,
+    "arp_A" TEXT,
+    "arp_B" TEXT,
+    "arp_C" TEXT,
+    "arp_D" TEXT,
+    "arp_E" TEXT,
+    "arp_F" TEXT,
+    "name_owner" TEXT NOT NULL,
+    "title_no" TEXT,
+    "area" TEXT,
+    "classification_no" TEXT,
+    "improvement_1" TEXT,
+    "improvement_2" TEXT,
+    "mch" TEXT,
+    "oth" TEXT,
+    "index_no" TEXT NOT NULL,
+    "barangay" TEXT NOT NULL,
+    "cancel_reason" TEXT,
+    "cancel_details" JSONB,
+    "remarks" TEXT
+);
+INSERT INTO "new_Anislag" ("area", "arp_A", "arp_B", "arp_C", "arp_D", "arp_E", "arp_F", "assessor_no", "barangay", "cadastral_no", "cancel_details", "cancel_reason", "classification_no", "id", "improvement_1", "improvement_2", "index_no", "mch", "name_owner", "oth", "remarks", "title_no") SELECT "area", "arp_A", "arp_B", "arp_C", "arp_D", "arp_E", "arp_F", "assessor_no", "barangay", "cadastral_no", "cancel_details", "cancel_reason", "classification_no", "id", "improvement_1", "improvement_2", "index_no", "mch", "name_owner", "oth", "remarks", "title_no" FROM "Anislag";
+DROP TABLE "Anislag";
+ALTER TABLE "new_Anislag" RENAME TO "Anislag";
+PRAGMA foreign_keys=ON;
+PRAGMA defer_foreign_keys=OFF;
