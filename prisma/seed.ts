@@ -3,20 +3,17 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function seed() {
-  await prisma.user.createMany({
-    data: [
-      {
-        username: "Buns",
-        password: "buns123"
-      },
-      {
-        username: "Patrick",
-        password: "pat123"
-      }
-    ]
-
+  // Seed users for verification testing
+  await prisma.anislag.createMany({
+    data:[]
+      
+    // skipDuplicates: true
   });
 
+  // Seed anislag data if needed
+  await prisma.anislag.createMany({
+    data: []
+  });
 
   console.log('✅ Seed data inserted!');
 }
@@ -30,12 +27,6 @@ seed()
     await prisma.$disconnect();
   });
 
-
-  // {
-  //   username: "Buns",
-  //   password: "buns123"
-  // },
-  // {
-  //   username: "Patrick",
-  //   password: "pat123"
-  // }
+// Example users
+// { username: "Buns", password: "buns123" }
+// { username: "Patrick", password: "pat123" }
