@@ -5,9 +5,9 @@ const prisma = new PrismaClient();
 async function seed() {
   // Seed users for verification testing
   await prisma.anislag.createMany({
-    data:[]
+    data:[
       
-    // skipDuplicates: true
+    ]
   });
 
   // Seed anislag data if needed

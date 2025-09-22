@@ -10,7 +10,7 @@ datasource db {
 model User {
   user_id  Int    @id @default(autoincrement())
   username String
-  name String
+  name     String
   password String
 }
 
@@ -38,4 +38,6 @@ model Anislag {
   cancel_details    Json?
   remarks           String?
   changes           String?
+  td_no             String?
+  transferred_from  Json?
 }
