@@ -12,17 +12,17 @@ This project consists of two repositories:
 How to Run Locally
 ------------------
 
-1. Clone the repositories
-   git clone https://github.com/Assessor-s-Tax-Roll-Pinamungajan/server.git
-   git clone https://github.com/Assessor-s-Tax-Roll-Pinamungajan/client.git
+1. Clone the repositories  
+   git clone https://github.com/Assessor-s-Tax-Roll-Pinamungajan/server.git  
+   git clone https://github.com/Assessor-s-Tax-Roll-Pinamungajan/client.git  
 
-2. Check Node.js version
-   node --version
+2. Check Node.js version  
+   node --version  
 
-3. Setup Client
-   cd client
-   npm install
-   npm run start
+3. Setup Client  
+   cd client  
+   npm install  
+   npm run start  
 
 4. Setup Server
    cd server
