@@ -24,27 +24,27 @@ How to Run Locally
    npm install  
    npm run start  
 
-4. Setup Server
-   cd server
-   npm install
+4. Setup Server  
+   cd server  
+   npm install  
 
-   Create a new .env file inside the server folder with this content:
-   DATABASE_URL="file:./reyal.db"
+   Create a new .env file inside the server folder with this content:  
+   DATABASE_URL="file:./reyal.db"  
 
-   Generate Prisma client:
-   npx prisma generate
+   Generate Prisma client:  
+   npx prisma generate  
 
-   Start the server:
-   npm start
+   Start the server:  
+   npm start  
 
-5. (Optional) Seed Bulk Data
-   If you need initial data for testing, update seed.ts based on schema.prisma, then run:
-   npx prisma db seed
+5. (Optional) Seed Bulk Data  
+   If you need initial data for testing, update seed.ts based on schema.prisma, then run:  
+   npx prisma db seed  
 
-------------------------------------------------------------
+------------------------------------------------------------  
 
-Notes
------
-- The system is intended to run within the Assessor’s Office LAN setup.
-- No login functionality is included.
-- Data can be viewed, edited, and added, but not deleted.
+Notes  
+-----  
+- The system is intended to run within the Assessor’s Office LAN setup.  
+- No login functionality is included.  
+- Data can be viewed, edited, and added, but not deleted.  
