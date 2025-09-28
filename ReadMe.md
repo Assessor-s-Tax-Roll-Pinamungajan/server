@@ -1,24 +1,50 @@
-## How to run locally the system
+Assessor's Tax Roll System - Pinamungajan
+=========================================
 
-1. clone the repos 
-https://github.com/Assessor-s-Tax-Roll-Pinamungajan/server.git
-https://github.com/Assessor-s-Tax-Roll-Pinamungajan/client.git
+A LAN-based system for managing and displaying the municipality's tax roll records.  
+This project consists of two repositories:
 
-2. check node version
-node --version
+- Server: https://github.com/Assessor-s-Tax-Roll-Pinamungajan/server.git
+- Client: https://github.com/Assessor-s-Tax-Roll-Pinamungajan/client.git
 
-3. cd to client
-npm i
-npm run start
+------------------------------------------------------------
 
-4. cd server
-npm i
-make new .env
-DATABASE_URL="file:./reyal.db"
-npx prisma generate
-npm start
+How to Run Locally
+------------------
 
-5. Make new seed - for bulk data (optional)
-change 
-seed.ts in accordance with schema.prisma
+1. Clone the repositories
+   git clone https://github.com/Assessor-s-Tax-Roll-Pinamungajan/server.git
+   git clone https://github.com/Assessor-s-Tax-Roll-Pinamungajan/client.git
 
+2. Check Node.js version
+   node --version
+
+3. Setup Client
+   cd client
+   npm install
+   npm run start
+
+4. Setup Server
+   cd server
+   npm install
+
+   Create a new .env file inside the server folder with this content:
+   DATABASE_URL="file:./reyal.db"
+
+   Generate Prisma client:
+   npx prisma generate
+
+   Start the server:
+   npm start
+
+5. (Optional) Seed Bulk Data
+   If you need initial data for testing, update seed.ts based on schema.prisma, then run:
+   npx prisma db seed
+
+------------------------------------------------------------
+
+Notes
+-----
+- The system is intended to run within the Assessor’s Office LAN setup.
+- No login functionality is included.
+- Data can be viewed, edited, and added, but not deleted.
